@@ -29,7 +29,9 @@ pipeline {
             steps {
                 echo ' The value of the env_vairable is ${MY_ENV_VAR}'
                 echo 'build id is "$BUILD_ID"'
-                echo ' build url ${BUILD_URL}'
+                sh '''
+                echo 'build url ${BUILD_URL}'
+                '''
             }
         }
     }
