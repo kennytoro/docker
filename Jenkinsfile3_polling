@@ -27,9 +27,9 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo ' The value of the env_vairable is ${MY_ENV_VAR}'
-                echo 'build id is "$BUILD_ID"'
-                echo ' build url $BUILD_URL  $BUILD_ID'
+                echo "The value of the env_vairable is ${MY_ENV_VAR}"
+                echo "build id is $BUILD_ID"
+                echo "build url $BUILD_URL  $BUILD_ID"
             }
         }
     }
