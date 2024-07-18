@@ -4,9 +4,9 @@ pipeline {
             label 'docker-agent-python'
         }
     }
-    environment (
+    environment {
         NAME = 'Toro'
-    )
+    }
 
     stages {
         stage('Checkoout') {
@@ -30,5 +30,5 @@ pipeline {
             }
         }
     }
-    
+
 }
