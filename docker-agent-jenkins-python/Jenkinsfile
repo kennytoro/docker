@@ -7,6 +7,9 @@ pipeline {
     environment {
         NAME = 'Toro'
     }
+    triggers {
+        pollSCM '* * * * *'
+    }
 
     stages {
         stage('Checkoout') {
@@ -19,6 +22,8 @@ pipeline {
             steps {
                 echo "$NAME is building"
                 sh '''
+                ls
+                python3 First.py
                 echo "doing stuffs"
                 '''
             }
