@@ -1,0 +1,34 @@
+pipeline {
+    agent {
+        node {
+            label 'docker-agent-python'
+        }
+    }
+    environment (
+        NAME = 'Toro'
+    )
+
+    stages {
+        stage('Checkoout') {
+            steps {
+                git 'https://github.com/kennytoro/python_files.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo "$NAME is building"
+                sh '''
+                echo "doing stuffs"
+                '''
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "kubectl apply -f ."
+            }
+        }
+    }
+    
+}
